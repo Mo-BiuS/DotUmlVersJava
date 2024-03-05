@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g 2024-02-29 15:41:13
+// $ANTLR 3.5.2 C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g 2024-03-05 16:44:20
 
 import java.io.IOException;
 import java.io.DataInputStream;
@@ -148,35 +148,35 @@ public class DotUmlParser extends Parser {
 
 
 	// $ANTLR start "header"
-	// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:1: header : '[' ( ident | '=' | ( 'label' '=' '\"' ident '\"' ) )* ']' ;
+	// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:1: header : '[' ( ident | '=' | ( 'label' '=' '\"' ident ( ident )* '\"' ) )* ']' ;
 	public final void header() throws RecognitionException {
 		try {
-			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:7: ( '[' ( ident | '=' | ( 'label' '=' '\"' ident '\"' ) )* ']' )
-			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:9: '[' ( ident | '=' | ( 'label' '=' '\"' ident '\"' ) )* ']'
+			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:7: ( '[' ( ident | '=' | ( 'label' '=' '\"' ident ( ident )* '\"' ) )* ']' )
+			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:9: '[' ( ident | '=' | ( 'label' '=' '\"' ident ( ident )* '\"' ) )* ']'
 			{
 			match(input,20,FOLLOW_20_in_header94); 
-			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:13: ( ident | '=' | ( 'label' '=' '\"' ident '\"' ) )*
-			loop2:
+			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:13: ( ident | '=' | ( 'label' '=' '\"' ident ( ident )* '\"' ) )*
+			loop3:
 			while (true) {
-				int alt2=4;
+				int alt3=4;
 				switch ( input.LA(1) ) {
 				case ID:
 					{
-					alt2=1;
+					alt3=1;
 					}
 					break;
 				case 17:
 					{
-					alt2=2;
+					alt3=2;
 					}
 					break;
 				case 30:
 					{
-					alt2=3;
+					alt3=3;
 					}
 					break;
 				}
-				switch (alt2) {
+				switch (alt3) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:14: ident
 					{
@@ -193,10 +193,10 @@ public class DotUmlParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:24: ( 'label' '=' '\"' ident '\"' )
+					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:24: ( 'label' '=' '\"' ident ( ident )* '\"' )
 					{
-					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:24: ( 'label' '=' '\"' ident '\"' )
-					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:25: 'label' '=' '\"' ident '\"'
+					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:24: ( 'label' '=' '\"' ident ( ident )* '\"' )
+					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:25: 'label' '=' '\"' ident ( ident )* '\"'
 					{
 					match(input,30,FOLLOW_30_in_header102); 
 					match(input,17,FOLLOW_17_in_header104); 
@@ -205,19 +205,45 @@ public class DotUmlParser extends Parser {
 					ident();
 					state._fsp--;
 
-					match(input,7,FOLLOW_7_in_header110); 
 					PtGen.pt(1);
+					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:62: ( ident )*
+					loop2:
+					while (true) {
+						int alt2=2;
+						int LA2_0 = input.LA(1);
+						if ( (LA2_0==ID) ) {
+							alt2=1;
+						}
+
+						switch (alt2) {
+						case 1 :
+							// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:30:63: ident
+							{
+							pushFollow(FOLLOW_ident_in_header113);
+							ident();
+							state._fsp--;
+
+							PtGen.pt(2);
+							}
+							break;
+
+						default :
+							break loop2;
+						}
+					}
+
+					match(input,7,FOLLOW_7_in_header120); 
 					}
 
 					}
 					break;
 
 				default :
-					break loop2;
+					break loop3;
 				}
 			}
 
-			match(input,21,FOLLOW_21_in_header118); 
+			match(input,21,FOLLOW_21_in_header125); 
 			}
 
 		}
@@ -240,39 +266,39 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:33:9: ( interfaceStruct | classStruct | enumStruct | alignStruct )
 			{
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:33:9: ( interfaceStruct | classStruct | enumStruct | alignStruct )
-			int alt3=4;
+			int alt4=4;
 			switch ( input.LA(1) ) {
 			case 29:
 				{
-				alt3=1;
+				alt4=1;
 				}
 				break;
 			case 23:
 			case 26:
 				{
-				alt3=2;
+				alt4=2;
 				}
 				break;
 			case 27:
 				{
-				alt3=3;
+				alt4=3;
 				}
 				break;
 			case 24:
 				{
-				alt3=4;
+				alt4=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 3, 0, input);
+					new NoViableAltException("", 4, 0, input);
 				throw nvae;
 			}
-			switch (alt3) {
+			switch (alt4) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:33:10: interfaceStruct
 					{
-					pushFollow(FOLLOW_interfaceStruct_in_object127);
+					pushFollow(FOLLOW_interfaceStruct_in_object134);
 					interfaceStruct();
 					state._fsp--;
 
@@ -281,7 +307,7 @@ public class DotUmlParser extends Parser {
 				case 2 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:33:26: classStruct
 					{
-					pushFollow(FOLLOW_classStruct_in_object129);
+					pushFollow(FOLLOW_classStruct_in_object136);
 					classStruct();
 					state._fsp--;
 
@@ -290,7 +316,7 @@ public class DotUmlParser extends Parser {
 				case 3 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:33:38: enumStruct
 					{
-					pushFollow(FOLLOW_enumStruct_in_object131);
+					pushFollow(FOLLOW_enumStruct_in_object138);
 					enumStruct();
 					state._fsp--;
 
@@ -299,7 +325,7 @@ public class DotUmlParser extends Parser {
 				case 4 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:33:49: alignStruct
 					{
-					pushFollow(FOLLOW_alignStruct_in_object133);
+					pushFollow(FOLLOW_alignStruct_in_object140);
 					alignStruct();
 					state._fsp--;
 
@@ -329,27 +355,27 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:35:16: ( 'interface' ident '{' ( varfunc )* '}' )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:35:18: 'interface' ident '{' ( varfunc )* '}'
 			{
-			match(input,29,FOLLOW_29_in_interfaceStruct142); 
-			pushFollow(FOLLOW_ident_in_interfaceStruct144);
+			match(input,29,FOLLOW_29_in_interfaceStruct149); 
+			pushFollow(FOLLOW_ident_in_interfaceStruct151);
 			ident();
 			state._fsp--;
 
 			PtGen.pt(10);
-			match(input,37,FOLLOW_37_in_interfaceStruct148); 
+			match(input,37,FOLLOW_37_in_interfaceStruct155); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:35:56: ( varfunc )*
-			loop4:
+			loop5:
 			while (true) {
-				int alt4=2;
-				int LA4_0 = input.LA(1);
-				if ( ((LA4_0 >= 31 && LA4_0 <= 33)) ) {
-					alt4=1;
+				int alt5=2;
+				int LA5_0 = input.LA(1);
+				if ( ((LA5_0 >= 31 && LA5_0 <= 33)) ) {
+					alt5=1;
 				}
 
-				switch (alt4) {
+				switch (alt5) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:35:57: varfunc
 					{
-					pushFollow(FOLLOW_varfunc_in_interfaceStruct151);
+					pushFollow(FOLLOW_varfunc_in_interfaceStruct158);
 					varfunc();
 					state._fsp--;
 
@@ -357,11 +383,11 @@ public class DotUmlParser extends Parser {
 					break;
 
 				default :
-					break loop4;
+					break loop5;
 				}
 			}
 
-			match(input,38,FOLLOW_38_in_interfaceStruct155); 
+			match(input,38,FOLLOW_38_in_interfaceStruct162); 
 			PtGen.pt(14);
 			}
 
@@ -385,31 +411,31 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:36:18: ( ( 'abstract' 'class' ident ) | 'class' ident ) '{' ( varfunc )* '}'
 			{
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:36:18: ( ( 'abstract' 'class' ident ) | 'class' ident )
-			int alt5=2;
-			int LA5_0 = input.LA(1);
-			if ( (LA5_0==23) ) {
-				alt5=1;
+			int alt6=2;
+			int LA6_0 = input.LA(1);
+			if ( (LA6_0==23) ) {
+				alt6=1;
 			}
-			else if ( (LA5_0==26) ) {
-				alt5=2;
+			else if ( (LA6_0==26) ) {
+				alt6=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 5, 0, input);
+					new NoViableAltException("", 6, 0, input);
 				throw nvae;
 			}
 
-			switch (alt5) {
+			switch (alt6) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:36:19: ( 'abstract' 'class' ident )
 					{
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:36:19: ( 'abstract' 'class' ident )
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:36:20: 'abstract' 'class' ident
 					{
-					match(input,23,FOLLOW_23_in_classStruct170); 
-					match(input,26,FOLLOW_26_in_classStruct172); 
-					pushFollow(FOLLOW_ident_in_classStruct174);
+					match(input,23,FOLLOW_23_in_classStruct177); 
+					match(input,26,FOLLOW_26_in_classStruct179); 
+					pushFollow(FOLLOW_ident_in_classStruct181);
 					ident();
 					state._fsp--;
 
@@ -421,8 +447,8 @@ public class DotUmlParser extends Parser {
 				case 2 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:37:20: 'class' ident
 					{
-					match(input,26,FOLLOW_26_in_classStruct198); 
-					pushFollow(FOLLOW_ident_in_classStruct200);
+					match(input,26,FOLLOW_26_in_classStruct205); 
+					pushFollow(FOLLOW_ident_in_classStruct207);
 					ident();
 					state._fsp--;
 
@@ -432,21 +458,21 @@ public class DotUmlParser extends Parser {
 
 			}
 
-			match(input,37,FOLLOW_37_in_classStruct222); 
+			match(input,37,FOLLOW_37_in_classStruct229); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:38:22: ( varfunc )*
-			loop6:
+			loop7:
 			while (true) {
-				int alt6=2;
-				int LA6_0 = input.LA(1);
-				if ( ((LA6_0 >= 31 && LA6_0 <= 33)) ) {
-					alt6=1;
+				int alt7=2;
+				int LA7_0 = input.LA(1);
+				if ( ((LA7_0 >= 31 && LA7_0 <= 33)) ) {
+					alt7=1;
 				}
 
-				switch (alt6) {
+				switch (alt7) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:38:23: varfunc
 					{
-					pushFollow(FOLLOW_varfunc_in_classStruct225);
+					pushFollow(FOLLOW_varfunc_in_classStruct232);
 					varfunc();
 					state._fsp--;
 
@@ -454,11 +480,11 @@ public class DotUmlParser extends Parser {
 					break;
 
 				default :
-					break loop6;
+					break loop7;
 				}
 			}
 
-			match(input,38,FOLLOW_38_in_classStruct229); 
+			match(input,38,FOLLOW_38_in_classStruct236); 
 			PtGen.pt(14);
 			}
 
@@ -481,27 +507,27 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:39:11: ( 'enumeration' ident '{' ( ident )* '}' )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:39:18: 'enumeration' ident '{' ( ident )* '}'
 			{
-			match(input,27,FOLLOW_27_in_enumStruct243); 
-			pushFollow(FOLLOW_ident_in_enumStruct245);
+			match(input,27,FOLLOW_27_in_enumStruct250); 
+			pushFollow(FOLLOW_ident_in_enumStruct252);
 			ident();
 			state._fsp--;
 
 			PtGen.pt(13);
-			match(input,37,FOLLOW_37_in_enumStruct249); 
+			match(input,37,FOLLOW_37_in_enumStruct256); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:39:58: ( ident )*
-			loop7:
+			loop8:
 			while (true) {
-				int alt7=2;
-				int LA7_0 = input.LA(1);
-				if ( (LA7_0==ID) ) {
-					alt7=1;
+				int alt8=2;
+				int LA8_0 = input.LA(1);
+				if ( (LA8_0==ID) ) {
+					alt8=1;
 				}
 
-				switch (alt7) {
+				switch (alt8) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:39:59: ident
 					{
-					pushFollow(FOLLOW_ident_in_enumStruct252);
+					pushFollow(FOLLOW_ident_in_enumStruct259);
 					ident();
 					state._fsp--;
 
@@ -509,11 +535,11 @@ public class DotUmlParser extends Parser {
 					break;
 
 				default :
-					break loop7;
+					break loop8;
 				}
 			}
 
-			match(input,38,FOLLOW_38_in_enumStruct256); 
+			match(input,38,FOLLOW_38_in_enumStruct263); 
 			PtGen.pt(14);
 			}
 
@@ -536,22 +562,22 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:40:12: ( 'align' '{' ( ident )* '}' )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:40:18: 'align' '{' ( ident )* '}'
 			{
-			match(input,24,FOLLOW_24_in_alignStruct269); 
-			match(input,37,FOLLOW_37_in_alignStruct271); 
+			match(input,24,FOLLOW_24_in_alignStruct276); 
+			match(input,37,FOLLOW_37_in_alignStruct278); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:40:30: ( ident )*
-			loop8:
+			loop9:
 			while (true) {
-				int alt8=2;
-				int LA8_0 = input.LA(1);
-				if ( (LA8_0==ID) ) {
-					alt8=1;
+				int alt9=2;
+				int LA9_0 = input.LA(1);
+				if ( (LA9_0==ID) ) {
+					alt9=1;
 				}
 
-				switch (alt8) {
+				switch (alt9) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:40:31: ident
 					{
-					pushFollow(FOLLOW_ident_in_alignStruct274);
+					pushFollow(FOLLOW_ident_in_alignStruct281);
 					ident();
 					state._fsp--;
 
@@ -559,11 +585,11 @@ public class DotUmlParser extends Parser {
 					break;
 
 				default :
-					break loop8;
+					break loop9;
 				}
 			}
 
-			match(input,38,FOLLOW_38_in_alignStruct278); 
+			match(input,38,FOLLOW_38_in_alignStruct285); 
 			}
 
 		}
@@ -585,26 +611,26 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:42:8: ( visibility ident ( function )? ( ':' ident )? )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:42:10: visibility ident ( function )? ( ':' ident )?
 			{
-			pushFollow(FOLLOW_visibility_in_varfunc286);
+			pushFollow(FOLLOW_visibility_in_varfunc293);
 			visibility();
 			state._fsp--;
 
-			pushFollow(FOLLOW_ident_in_varfunc288);
+			pushFollow(FOLLOW_ident_in_varfunc295);
 			ident();
 			state._fsp--;
 
 			PtGen.pt(24);
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:42:43: ( function )?
-			int alt9=2;
-			int LA9_0 = input.LA(1);
-			if ( (LA9_0==8) ) {
-				alt9=1;
+			int alt10=2;
+			int LA10_0 = input.LA(1);
+			if ( (LA10_0==8) ) {
+				alt10=1;
 			}
-			switch (alt9) {
+			switch (alt10) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:42:45: function
 					{
-					pushFollow(FOLLOW_function_in_varfunc294);
+					pushFollow(FOLLOW_function_in_varfunc301);
 					function();
 					state._fsp--;
 
@@ -614,17 +640,17 @@ public class DotUmlParser extends Parser {
 			}
 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:42:57: ( ':' ident )?
-			int alt10=2;
-			int LA10_0 = input.LA(1);
-			if ( (LA10_0==14) ) {
-				alt10=1;
+			int alt11=2;
+			int LA11_0 = input.LA(1);
+			if ( (LA11_0==14) ) {
+				alt11=1;
 			}
-			switch (alt10) {
+			switch (alt11) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:42:58: ':' ident
 					{
-					match(input,14,FOLLOW_14_in_varfunc300); 
-					pushFollow(FOLLOW_ident_in_varfunc302);
+					match(input,14,FOLLOW_14_in_varfunc307); 
+					pushFollow(FOLLOW_ident_in_varfunc309);
 					ident();
 					state._fsp--;
 
@@ -656,49 +682,49 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:43:9: ( '(' ( ident ':' ident ( ',' ident ':' ident )* )? ')' )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:43:11: '(' ( ident ':' ident ( ',' ident ':' ident )* )? ')'
 			{
-			match(input,8,FOLLOW_8_in_function314); 
+			match(input,8,FOLLOW_8_in_function321); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:43:15: ( ident ':' ident ( ',' ident ':' ident )* )?
-			int alt12=2;
-			int LA12_0 = input.LA(1);
-			if ( (LA12_0==ID) ) {
-				alt12=1;
+			int alt13=2;
+			int LA13_0 = input.LA(1);
+			if ( (LA13_0==ID) ) {
+				alt13=1;
 			}
-			switch (alt12) {
+			switch (alt13) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:43:17: ident ':' ident ( ',' ident ':' ident )*
 					{
-					pushFollow(FOLLOW_ident_in_function318);
+					pushFollow(FOLLOW_ident_in_function325);
 					ident();
 					state._fsp--;
 
 					PtGen.pt(25);
-					match(input,14,FOLLOW_14_in_function321); 
-					pushFollow(FOLLOW_ident_in_function323);
+					match(input,14,FOLLOW_14_in_function328); 
+					pushFollow(FOLLOW_ident_in_function330);
 					ident();
 					state._fsp--;
 
 					PtGen.pt(26);
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:43:64: ( ',' ident ':' ident )*
-					loop11:
+					loop12:
 					while (true) {
-						int alt11=2;
-						int LA11_0 = input.LA(1);
-						if ( (LA11_0==11) ) {
-							alt11=1;
+						int alt12=2;
+						int LA12_0 = input.LA(1);
+						if ( (LA12_0==11) ) {
+							alt12=1;
 						}
 
-						switch (alt11) {
+						switch (alt12) {
 						case 1 :
 							// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:43:65: ',' ident ':' ident
 							{
-							match(input,11,FOLLOW_11_in_function328); 
-							pushFollow(FOLLOW_ident_in_function330);
+							match(input,11,FOLLOW_11_in_function335); 
+							pushFollow(FOLLOW_ident_in_function337);
 							ident();
 							state._fsp--;
 
 							PtGen.pt(25);
-							match(input,14,FOLLOW_14_in_function333); 
-							pushFollow(FOLLOW_ident_in_function335);
+							match(input,14,FOLLOW_14_in_function340); 
+							pushFollow(FOLLOW_ident_in_function342);
 							ident();
 							state._fsp--;
 
@@ -707,7 +733,7 @@ public class DotUmlParser extends Parser {
 							break;
 
 						default :
-							break loop11;
+							break loop12;
 						}
 					}
 
@@ -716,7 +742,7 @@ public class DotUmlParser extends Parser {
 
 			}
 
-			match(input,9,FOLLOW_9_in_function344); 
+			match(input,9,FOLLOW_9_in_function351); 
 			}
 
 		}
@@ -739,47 +765,47 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:45:13: ( 'private' | 'public' | 'protected' )
 			{
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:45:13: ( 'private' | 'public' | 'protected' )
-			int alt13=3;
+			int alt14=3;
 			switch ( input.LA(1) ) {
 			case 31:
 				{
-				alt13=1;
+				alt14=1;
 				}
 				break;
 			case 33:
 				{
-				alt13=2;
+				alt14=2;
 				}
 				break;
 			case 32:
 				{
-				alt13=3;
+				alt14=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 13, 0, input);
+					new NoViableAltException("", 14, 0, input);
 				throw nvae;
 			}
-			switch (alt13) {
+			switch (alt14) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:45:14: 'private'
 					{
-					match(input,31,FOLLOW_31_in_visibility352); 
+					match(input,31,FOLLOW_31_in_visibility359); 
 					PtGen.pt(20);
 					}
 					break;
 				case 2 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:45:42: 'public'
 					{
-					match(input,33,FOLLOW_33_in_visibility358); 
+					match(input,33,FOLLOW_33_in_visibility365); 
 					PtGen.pt(21);
 					}
 					break;
 				case 3 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:45:69: 'protected'
 					{
-					match(input,32,FOLLOW_32_in_visibility364); 
+					match(input,32,FOLLOW_32_in_visibility371); 
 					PtGen.pt(22);
 					}
 					break;
@@ -807,22 +833,22 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:13: ( ident ( card1 )? relation ( card2 )? ident ( 'with' ident )? ( ':' ident )? ( ';' )? )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:15: ident ( card1 )? relation ( card2 )? ident ( 'with' ident )? ( ':' ident )? ( ';' )?
 			{
-			pushFollow(FOLLOW_ident_in_associations376);
+			pushFollow(FOLLOW_ident_in_associations383);
 			ident();
 			state._fsp--;
 
 			PtGen.pt(44);
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:37: ( card1 )?
-			int alt14=2;
-			int LA14_0 = input.LA(1);
-			if ( (LA14_0==7) ) {
-				alt14=1;
+			int alt15=2;
+			int LA15_0 = input.LA(1);
+			if ( (LA15_0==7) ) {
+				alt15=1;
 			}
-			switch (alt14) {
+			switch (alt15) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:38: card1
 					{
-					pushFollow(FOLLOW_card1_in_associations381);
+					pushFollow(FOLLOW_card1_in_associations388);
 					card1();
 					state._fsp--;
 
@@ -831,21 +857,21 @@ public class DotUmlParser extends Parser {
 
 			}
 
-			pushFollow(FOLLOW_relation_in_associations385);
+			pushFollow(FOLLOW_relation_in_associations392);
 			relation();
 			state._fsp--;
 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:55: ( card2 )?
-			int alt15=2;
-			int LA15_0 = input.LA(1);
-			if ( (LA15_0==7) ) {
-				alt15=1;
+			int alt16=2;
+			int LA16_0 = input.LA(1);
+			if ( (LA16_0==7) ) {
+				alt16=1;
 			}
-			switch (alt15) {
+			switch (alt16) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:56: card2
 					{
-					pushFollow(FOLLOW_card2_in_associations388);
+					pushFollow(FOLLOW_card2_in_associations395);
 					card2();
 					state._fsp--;
 
@@ -854,23 +880,23 @@ public class DotUmlParser extends Parser {
 
 			}
 
-			pushFollow(FOLLOW_ident_in_associations392);
+			pushFollow(FOLLOW_ident_in_associations399);
 			ident();
 			state._fsp--;
 
 			PtGen.pt(45);
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:86: ( 'with' ident )?
-			int alt16=2;
-			int LA16_0 = input.LA(1);
-			if ( (LA16_0==35) ) {
-				alt16=1;
+			int alt17=2;
+			int LA17_0 = input.LA(1);
+			if ( (LA17_0==35) ) {
+				alt17=1;
 			}
-			switch (alt16) {
+			switch (alt17) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:87: 'with' ident
 					{
-					match(input,35,FOLLOW_35_in_associations397); 
-					pushFollow(FOLLOW_ident_in_associations399);
+					match(input,35,FOLLOW_35_in_associations404); 
+					pushFollow(FOLLOW_ident_in_associations406);
 					ident();
 					state._fsp--;
 
@@ -881,17 +907,17 @@ public class DotUmlParser extends Parser {
 			}
 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:118: ( ':' ident )?
-			int alt17=2;
-			int LA17_0 = input.LA(1);
-			if ( (LA17_0==14) ) {
-				alt17=1;
+			int alt18=2;
+			int LA18_0 = input.LA(1);
+			if ( (LA18_0==14) ) {
+				alt18=1;
 			}
-			switch (alt17) {
+			switch (alt18) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:119: ':' ident
 					{
-					match(input,14,FOLLOW_14_in_associations406); 
-					pushFollow(FOLLOW_ident_in_associations408);
+					match(input,14,FOLLOW_14_in_associations413); 
+					pushFollow(FOLLOW_ident_in_associations415);
 					ident();
 					state._fsp--;
 
@@ -901,16 +927,16 @@ public class DotUmlParser extends Parser {
 			}
 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:131: ( ';' )?
-			int alt18=2;
-			int LA18_0 = input.LA(1);
-			if ( (LA18_0==15) ) {
-				alt18=1;
+			int alt19=2;
+			int LA19_0 = input.LA(1);
+			if ( (LA19_0==15) ) {
+				alt19=1;
 			}
-			switch (alt18) {
+			switch (alt19) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:48:132: ';'
 					{
-					match(input,15,FOLLOW_15_in_associations413); 
+					match(input,15,FOLLOW_15_in_associations420); 
 					}
 					break;
 
@@ -938,78 +964,78 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:6: ( '\"' ( '*' | nbentier ( '..' ( '*' | nbentier ) )? ) '\"' )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:8: '\"' ( '*' | nbentier ( '..' ( '*' | nbentier ) )? ) '\"'
 			{
-			match(input,7,FOLLOW_7_in_card1425); 
+			match(input,7,FOLLOW_7_in_card1432); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:12: ( '*' | nbentier ( '..' ( '*' | nbentier ) )? )
-			int alt21=2;
-			int LA21_0 = input.LA(1);
-			if ( (LA21_0==10) ) {
-				alt21=1;
+			int alt22=2;
+			int LA22_0 = input.LA(1);
+			if ( (LA22_0==10) ) {
+				alt22=1;
 			}
-			else if ( (LA21_0==INT) ) {
-				alt21=2;
+			else if ( (LA22_0==INT) ) {
+				alt22=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 21, 0, input);
+					new NoViableAltException("", 22, 0, input);
 				throw nvae;
 			}
 
-			switch (alt21) {
+			switch (alt22) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:13: '*'
 					{
-					match(input,10,FOLLOW_10_in_card1428); 
+					match(input,10,FOLLOW_10_in_card1435); 
 					PtGen.pt(50);
 					}
 					break;
 				case 2 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:36: nbentier ( '..' ( '*' | nbentier ) )?
 					{
-					pushFollow(FOLLOW_nbentier_in_card1435);
+					pushFollow(FOLLOW_nbentier_in_card1442);
 					nbentier();
 					state._fsp--;
 
 					PtGen.pt(51);
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:61: ( '..' ( '*' | nbentier ) )?
-					int alt20=2;
-					int LA20_0 = input.LA(1);
-					if ( (LA20_0==13) ) {
-						alt20=1;
+					int alt21=2;
+					int LA21_0 = input.LA(1);
+					if ( (LA21_0==13) ) {
+						alt21=1;
 					}
-					switch (alt20) {
+					switch (alt21) {
 						case 1 :
 							// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:62: '..' ( '*' | nbentier )
 							{
-							match(input,13,FOLLOW_13_in_card1440); 
+							match(input,13,FOLLOW_13_in_card1447); 
 							// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:67: ( '*' | nbentier )
-							int alt19=2;
-							int LA19_0 = input.LA(1);
-							if ( (LA19_0==10) ) {
-								alt19=1;
+							int alt20=2;
+							int LA20_0 = input.LA(1);
+							if ( (LA20_0==10) ) {
+								alt20=1;
 							}
-							else if ( (LA19_0==INT) ) {
-								alt19=2;
+							else if ( (LA20_0==INT) ) {
+								alt20=2;
 							}
 
 							else {
 								NoViableAltException nvae =
-									new NoViableAltException("", 19, 0, input);
+									new NoViableAltException("", 20, 0, input);
 								throw nvae;
 							}
 
-							switch (alt19) {
+							switch (alt20) {
 								case 1 :
 									// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:68: '*'
 									{
-									match(input,10,FOLLOW_10_in_card1443); 
+									match(input,10,FOLLOW_10_in_card1450); 
 									PtGen.pt(50);
 									}
 									break;
 								case 2 :
 									// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:50:90: nbentier
 									{
-									pushFollow(FOLLOW_nbentier_in_card1449);
+									pushFollow(FOLLOW_nbentier_in_card1456);
 									nbentier();
 									state._fsp--;
 
@@ -1029,7 +1055,7 @@ public class DotUmlParser extends Parser {
 
 			}
 
-			match(input,7,FOLLOW_7_in_card1459); 
+			match(input,7,FOLLOW_7_in_card1466); 
 			}
 
 		}
@@ -1051,78 +1077,78 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:6: ( '\"' ( '*' | nbentier ( '..' ( '*' | nbentier ) )? ) '\"' )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:8: '\"' ( '*' | nbentier ( '..' ( '*' | nbentier ) )? ) '\"'
 			{
-			match(input,7,FOLLOW_7_in_card2466); 
+			match(input,7,FOLLOW_7_in_card2473); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:12: ( '*' | nbentier ( '..' ( '*' | nbentier ) )? )
-			int alt24=2;
-			int LA24_0 = input.LA(1);
-			if ( (LA24_0==10) ) {
-				alt24=1;
+			int alt25=2;
+			int LA25_0 = input.LA(1);
+			if ( (LA25_0==10) ) {
+				alt25=1;
 			}
-			else if ( (LA24_0==INT) ) {
-				alt24=2;
+			else if ( (LA25_0==INT) ) {
+				alt25=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 24, 0, input);
+					new NoViableAltException("", 25, 0, input);
 				throw nvae;
 			}
 
-			switch (alt24) {
+			switch (alt25) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:13: '*'
 					{
-					match(input,10,FOLLOW_10_in_card2469); 
+					match(input,10,FOLLOW_10_in_card2476); 
 					PtGen.pt(52);
 					}
 					break;
 				case 2 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:36: nbentier ( '..' ( '*' | nbentier ) )?
 					{
-					pushFollow(FOLLOW_nbentier_in_card2476);
+					pushFollow(FOLLOW_nbentier_in_card2483);
 					nbentier();
 					state._fsp--;
 
 					PtGen.pt(53);
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:61: ( '..' ( '*' | nbentier ) )?
-					int alt23=2;
-					int LA23_0 = input.LA(1);
-					if ( (LA23_0==13) ) {
-						alt23=1;
+					int alt24=2;
+					int LA24_0 = input.LA(1);
+					if ( (LA24_0==13) ) {
+						alt24=1;
 					}
-					switch (alt23) {
+					switch (alt24) {
 						case 1 :
 							// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:62: '..' ( '*' | nbentier )
 							{
-							match(input,13,FOLLOW_13_in_card2481); 
+							match(input,13,FOLLOW_13_in_card2488); 
 							// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:67: ( '*' | nbentier )
-							int alt22=2;
-							int LA22_0 = input.LA(1);
-							if ( (LA22_0==10) ) {
-								alt22=1;
+							int alt23=2;
+							int LA23_0 = input.LA(1);
+							if ( (LA23_0==10) ) {
+								alt23=1;
 							}
-							else if ( (LA22_0==INT) ) {
-								alt22=2;
+							else if ( (LA23_0==INT) ) {
+								alt23=2;
 							}
 
 							else {
 								NoViableAltException nvae =
-									new NoViableAltException("", 22, 0, input);
+									new NoViableAltException("", 23, 0, input);
 								throw nvae;
 							}
 
-							switch (alt22) {
+							switch (alt23) {
 								case 1 :
 									// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:68: '*'
 									{
-									match(input,10,FOLLOW_10_in_card2484); 
+									match(input,10,FOLLOW_10_in_card2491); 
 									PtGen.pt(52);
 									}
 									break;
 								case 2 :
 									// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:51:90: nbentier
 									{
-									pushFollow(FOLLOW_nbentier_in_card2490);
+									pushFollow(FOLLOW_nbentier_in_card2497);
 									nbentier();
 									state._fsp--;
 
@@ -1142,7 +1168,7 @@ public class DotUmlParser extends Parser {
 
 			}
 
-			match(input,7,FOLLOW_7_in_card2500); 
+			match(input,7,FOLLOW_7_in_card2507); 
 			}
 
 		}
@@ -1165,107 +1191,107 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:12: ( '<' )? ( 'x' )? '-' ( 'r' | 'c' | 'g' | 'a' )? '-' ( 'x' )? ( '>' )?
 			{
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:12: ( '<' )?
-			int alt25=2;
-			int LA25_0 = input.LA(1);
-			if ( (LA25_0==16) ) {
-				alt25=1;
+			int alt26=2;
+			int LA26_0 = input.LA(1);
+			if ( (LA26_0==16) ) {
+				alt26=1;
 			}
-			switch (alt25) {
+			switch (alt26) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:13: '<'
 					{
-					match(input,16,FOLLOW_16_in_relation509); 
+					match(input,16,FOLLOW_16_in_relation516); 
 					}
 					break;
 
 			}
 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:19: ( 'x' )?
-			int alt26=2;
-			int LA26_0 = input.LA(1);
-			if ( (LA26_0==36) ) {
-				alt26=1;
+			int alt27=2;
+			int LA27_0 = input.LA(1);
+			if ( (LA27_0==36) ) {
+				alt27=1;
 			}
-			switch (alt26) {
+			switch (alt27) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:20: 'x'
 					{
-					match(input,36,FOLLOW_36_in_relation514); 
+					match(input,36,FOLLOW_36_in_relation521); 
 					PtGen.pt(46);
 					}
 					break;
 
 			}
 
-			match(input,12,FOLLOW_12_in_relation521); 
+			match(input,12,FOLLOW_12_in_relation528); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:47: ( 'r' | 'c' | 'g' | 'a' )?
-			int alt27=5;
+			int alt28=5;
 			switch ( input.LA(1) ) {
 				case 34:
 					{
-					alt27=1;
+					alt28=1;
 					}
 					break;
 				case 25:
 					{
-					alt27=2;
+					alt28=2;
 					}
 					break;
 				case 28:
 					{
-					alt27=3;
+					alt28=3;
 					}
 					break;
 				case 22:
 					{
-					alt27=4;
+					alt28=4;
 					}
 					break;
 			}
-			switch (alt27) {
+			switch (alt28) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:48: 'r'
 					{
-					match(input,34,FOLLOW_34_in_relation524); 
+					match(input,34,FOLLOW_34_in_relation531); 
 					PtGen.pt(40);
 					}
 					break;
 				case 2 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:69: 'c'
 					{
-					match(input,25,FOLLOW_25_in_relation529); 
+					match(input,25,FOLLOW_25_in_relation536); 
 					PtGen.pt(41);
 					}
 					break;
 				case 3 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:90: 'g'
 					{
-					match(input,28,FOLLOW_28_in_relation534); 
+					match(input,28,FOLLOW_28_in_relation541); 
 					PtGen.pt(42);
 					}
 					break;
 				case 4 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:111: 'a'
 					{
-					match(input,22,FOLLOW_22_in_relation539); 
+					match(input,22,FOLLOW_22_in_relation546); 
 					PtGen.pt(43);
 					}
 					break;
 
 			}
 
-			match(input,12,FOLLOW_12_in_relation544); 
+			match(input,12,FOLLOW_12_in_relation551); 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:136: ( 'x' )?
-			int alt28=2;
-			int LA28_0 = input.LA(1);
-			if ( (LA28_0==36) ) {
-				alt28=1;
+			int alt29=2;
+			int LA29_0 = input.LA(1);
+			if ( (LA29_0==36) ) {
+				alt29=1;
 			}
-			switch (alt28) {
+			switch (alt29) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:137: 'x'
 					{
-					match(input,36,FOLLOW_36_in_relation547); 
+					match(input,36,FOLLOW_36_in_relation554); 
 					PtGen.pt(47);
 					}
 					break;
@@ -1273,16 +1299,16 @@ public class DotUmlParser extends Parser {
 			}
 
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:159: ( '>' )?
-			int alt29=2;
-			int LA29_0 = input.LA(1);
-			if ( (LA29_0==18) ) {
-				alt29=1;
+			int alt30=2;
+			int LA30_0 = input.LA(1);
+			if ( (LA30_0==18) ) {
+				alt30=1;
 			}
-			switch (alt29) {
+			switch (alt30) {
 				case 1 :
 					// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:52:160: '>'
 					{
-					match(input,18,FOLLOW_18_in_relation554); 
+					match(input,18,FOLLOW_18_in_relation561); 
 					}
 					break;
 
@@ -1311,7 +1337,7 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:56:11: ( INT )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:56:15: INT
 			{
-			INT1=(Token)match(input,INT,FOLLOW_INT_in_nbentier570); 
+			INT1=(Token)match(input,INT,FOLLOW_INT_in_nbentier577); 
 			 PtGen.valEnt = Integer.parseInt((INT1!=null?INT1.getText():null));
 			}
 
@@ -1336,7 +1362,7 @@ public class DotUmlParser extends Parser {
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:57:7: ( ID )
 			// C:\\Users\\lodla\\Documents\\Cours\\L3\\Semestre6\\BMO\\DotUmlVersJava\\src\\DotUml.g:57:9: ID
 			{
-			ID2=(Token)match(input,ID,FOLLOW_ID_in_ident579); 
+			ID2=(Token)match(input,ID,FOLLOW_ID_in_ident586); 
 			 PtGen.ident = (ID2!=null?ID2.getText():null); 
 			}
 
@@ -1367,86 +1393,87 @@ public class DotUmlParser extends Parser {
 	public static final BitSet FOLLOW_30_in_header102 = new BitSet(new long[]{0x0000000000020000L});
 	public static final BitSet FOLLOW_17_in_header104 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_7_in_header106 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_header108 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_7_in_header110 = new BitSet(new long[]{0x0000000040220010L});
-	public static final BitSet FOLLOW_21_in_header118 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_interfaceStruct_in_object127 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_classStruct_in_object129 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_enumStruct_in_object131 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_alignStruct_in_object133 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_29_in_interfaceStruct142 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_interfaceStruct144 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_interfaceStruct148 = new BitSet(new long[]{0x0000004380000000L});
-	public static final BitSet FOLLOW_varfunc_in_interfaceStruct151 = new BitSet(new long[]{0x0000004380000000L});
-	public static final BitSet FOLLOW_38_in_interfaceStruct155 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_23_in_classStruct170 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_26_in_classStruct172 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_classStruct174 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_26_in_classStruct198 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_classStruct200 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_classStruct222 = new BitSet(new long[]{0x0000004380000000L});
-	public static final BitSet FOLLOW_varfunc_in_classStruct225 = new BitSet(new long[]{0x0000004380000000L});
-	public static final BitSet FOLLOW_38_in_classStruct229 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_27_in_enumStruct243 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_enumStruct245 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_enumStruct249 = new BitSet(new long[]{0x0000004000000010L});
-	public static final BitSet FOLLOW_ident_in_enumStruct252 = new BitSet(new long[]{0x0000004000000010L});
-	public static final BitSet FOLLOW_38_in_enumStruct256 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_24_in_alignStruct269 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_alignStruct271 = new BitSet(new long[]{0x0000004000000010L});
-	public static final BitSet FOLLOW_ident_in_alignStruct274 = new BitSet(new long[]{0x0000004000000010L});
-	public static final BitSet FOLLOW_38_in_alignStruct278 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_visibility_in_varfunc286 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_varfunc288 = new BitSet(new long[]{0x0000000000004102L});
-	public static final BitSet FOLLOW_function_in_varfunc294 = new BitSet(new long[]{0x0000000000004002L});
-	public static final BitSet FOLLOW_14_in_varfunc300 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_varfunc302 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_8_in_function314 = new BitSet(new long[]{0x0000000000000210L});
-	public static final BitSet FOLLOW_ident_in_function318 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_14_in_function321 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_function323 = new BitSet(new long[]{0x0000000000000A00L});
-	public static final BitSet FOLLOW_11_in_function328 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_function330 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_14_in_function333 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_function335 = new BitSet(new long[]{0x0000000000000A00L});
-	public static final BitSet FOLLOW_9_in_function344 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_31_in_visibility352 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_33_in_visibility358 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_32_in_visibility364 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ident_in_associations376 = new BitSet(new long[]{0x0000001000011080L});
-	public static final BitSet FOLLOW_card1_in_associations381 = new BitSet(new long[]{0x0000001000011000L});
-	public static final BitSet FOLLOW_relation_in_associations385 = new BitSet(new long[]{0x0000000000000090L});
-	public static final BitSet FOLLOW_card2_in_associations388 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_associations392 = new BitSet(new long[]{0x000000080000C002L});
-	public static final BitSet FOLLOW_35_in_associations397 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_associations399 = new BitSet(new long[]{0x000000000000C002L});
-	public static final BitSet FOLLOW_14_in_associations406 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ident_in_associations408 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_15_in_associations413 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_7_in_card1425 = new BitSet(new long[]{0x0000000000000420L});
-	public static final BitSet FOLLOW_10_in_card1428 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_nbentier_in_card1435 = new BitSet(new long[]{0x0000000000002080L});
-	public static final BitSet FOLLOW_13_in_card1440 = new BitSet(new long[]{0x0000000000000420L});
-	public static final BitSet FOLLOW_10_in_card1443 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_nbentier_in_card1449 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_7_in_card1459 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_7_in_card2466 = new BitSet(new long[]{0x0000000000000420L});
-	public static final BitSet FOLLOW_10_in_card2469 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_nbentier_in_card2476 = new BitSet(new long[]{0x0000000000002080L});
-	public static final BitSet FOLLOW_13_in_card2481 = new BitSet(new long[]{0x0000000000000420L});
-	public static final BitSet FOLLOW_10_in_card2484 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_nbentier_in_card2490 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_7_in_card2500 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_16_in_relation509 = new BitSet(new long[]{0x0000001000001000L});
-	public static final BitSet FOLLOW_36_in_relation514 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_12_in_relation521 = new BitSet(new long[]{0x0000000412401000L});
-	public static final BitSet FOLLOW_34_in_relation524 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_25_in_relation529 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_28_in_relation534 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_22_in_relation539 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_12_in_relation544 = new BitSet(new long[]{0x0000001000040002L});
-	public static final BitSet FOLLOW_36_in_relation547 = new BitSet(new long[]{0x0000000000040002L});
-	public static final BitSet FOLLOW_18_in_relation554 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INT_in_nbentier570 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_ident579 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ident_in_header108 = new BitSet(new long[]{0x0000000000000090L});
+	public static final BitSet FOLLOW_ident_in_header113 = new BitSet(new long[]{0x0000000000000090L});
+	public static final BitSet FOLLOW_7_in_header120 = new BitSet(new long[]{0x0000000040220010L});
+	public static final BitSet FOLLOW_21_in_header125 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_interfaceStruct_in_object134 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_classStruct_in_object136 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_enumStruct_in_object138 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_alignStruct_in_object140 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_29_in_interfaceStruct149 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_interfaceStruct151 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_interfaceStruct155 = new BitSet(new long[]{0x0000004380000000L});
+	public static final BitSet FOLLOW_varfunc_in_interfaceStruct158 = new BitSet(new long[]{0x0000004380000000L});
+	public static final BitSet FOLLOW_38_in_interfaceStruct162 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_23_in_classStruct177 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_26_in_classStruct179 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_classStruct181 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_26_in_classStruct205 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_classStruct207 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_classStruct229 = new BitSet(new long[]{0x0000004380000000L});
+	public static final BitSet FOLLOW_varfunc_in_classStruct232 = new BitSet(new long[]{0x0000004380000000L});
+	public static final BitSet FOLLOW_38_in_classStruct236 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_27_in_enumStruct250 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_enumStruct252 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_enumStruct256 = new BitSet(new long[]{0x0000004000000010L});
+	public static final BitSet FOLLOW_ident_in_enumStruct259 = new BitSet(new long[]{0x0000004000000010L});
+	public static final BitSet FOLLOW_38_in_enumStruct263 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_24_in_alignStruct276 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_alignStruct278 = new BitSet(new long[]{0x0000004000000010L});
+	public static final BitSet FOLLOW_ident_in_alignStruct281 = new BitSet(new long[]{0x0000004000000010L});
+	public static final BitSet FOLLOW_38_in_alignStruct285 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_visibility_in_varfunc293 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_varfunc295 = new BitSet(new long[]{0x0000000000004102L});
+	public static final BitSet FOLLOW_function_in_varfunc301 = new BitSet(new long[]{0x0000000000004002L});
+	public static final BitSet FOLLOW_14_in_varfunc307 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_varfunc309 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_8_in_function321 = new BitSet(new long[]{0x0000000000000210L});
+	public static final BitSet FOLLOW_ident_in_function325 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_14_in_function328 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_function330 = new BitSet(new long[]{0x0000000000000A00L});
+	public static final BitSet FOLLOW_11_in_function335 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_function337 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_14_in_function340 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_function342 = new BitSet(new long[]{0x0000000000000A00L});
+	public static final BitSet FOLLOW_9_in_function351 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_31_in_visibility359 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_33_in_visibility365 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_32_in_visibility371 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ident_in_associations383 = new BitSet(new long[]{0x0000001000011080L});
+	public static final BitSet FOLLOW_card1_in_associations388 = new BitSet(new long[]{0x0000001000011000L});
+	public static final BitSet FOLLOW_relation_in_associations392 = new BitSet(new long[]{0x0000000000000090L});
+	public static final BitSet FOLLOW_card2_in_associations395 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_associations399 = new BitSet(new long[]{0x000000080000C002L});
+	public static final BitSet FOLLOW_35_in_associations404 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_associations406 = new BitSet(new long[]{0x000000000000C002L});
+	public static final BitSet FOLLOW_14_in_associations413 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ident_in_associations415 = new BitSet(new long[]{0x0000000000008002L});
+	public static final BitSet FOLLOW_15_in_associations420 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_7_in_card1432 = new BitSet(new long[]{0x0000000000000420L});
+	public static final BitSet FOLLOW_10_in_card1435 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_nbentier_in_card1442 = new BitSet(new long[]{0x0000000000002080L});
+	public static final BitSet FOLLOW_13_in_card1447 = new BitSet(new long[]{0x0000000000000420L});
+	public static final BitSet FOLLOW_10_in_card1450 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_nbentier_in_card1456 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_7_in_card1466 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_7_in_card2473 = new BitSet(new long[]{0x0000000000000420L});
+	public static final BitSet FOLLOW_10_in_card2476 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_nbentier_in_card2483 = new BitSet(new long[]{0x0000000000002080L});
+	public static final BitSet FOLLOW_13_in_card2488 = new BitSet(new long[]{0x0000000000000420L});
+	public static final BitSet FOLLOW_10_in_card2491 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_nbentier_in_card2497 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_7_in_card2507 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_16_in_relation516 = new BitSet(new long[]{0x0000001000001000L});
+	public static final BitSet FOLLOW_36_in_relation521 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_12_in_relation528 = new BitSet(new long[]{0x0000000412401000L});
+	public static final BitSet FOLLOW_34_in_relation531 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_25_in_relation536 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_28_in_relation541 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_22_in_relation546 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_12_in_relation551 = new BitSet(new long[]{0x0000001000040002L});
+	public static final BitSet FOLLOW_36_in_relation554 = new BitSet(new long[]{0x0000000000040002L});
+	public static final BitSet FOLLOW_18_in_relation561 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_INT_in_nbentier577 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_ident586 = new BitSet(new long[]{0x0000000000000002L});
 }

@@ -40,6 +40,9 @@ public class PtGen {
             case 1:
                 ClassWriter.setFolderName(ident);
                 break;
+            case 2:
+                ClassWriter.addFolderName(ident);
+                break;
             //====[ClassInit]====
             case 10:
                 classWrite = ident;

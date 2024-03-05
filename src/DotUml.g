@@ -27,7 +27,7 @@ unite: 'ClassDiagram' {PtGen.pt(0);}
     EOF {PtGen.pt(1000);}
     ;
 
-header: '[' (ident|'='|('label' '=' '"' ident '"' {PtGen.pt(1);} ))* ']';
+header: '[' (ident|'='|('label' '=' '"' ident {PtGen.pt(1);} |  (ident  {PtGen.pt(2);})* '"'))* ']';
 
 
 object: (interfaceStruct|classStruct|enumStruct|alignStruct) ;
@@ -53,7 +53,7 @@ relation:  ('<')? ('x' {PtGen.pt(46);} )? '-' ('r' {PtGen.pt(40);}| 'c' {PtGen.p
 
 // Partie Lexicale //
 
-nbentier  :   INT { PtGen.valEnt = Integer.parseInt($INT.text);};
+nbentier  : INT { PtGen.valEnt = Integer.parseInt($INT.text);};
 ident : ID  { PtGen.ident = $ID.text; } ;
 
 // Prtie purement lexicale //

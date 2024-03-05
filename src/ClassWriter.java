@@ -20,6 +20,9 @@ class ClassWriter{
     public static void setFolderName(String name){
         folderName = name;
     }
+    public static void addFolderName(String name){
+        folderName += " " + name;
+    }
 
     public static void write(){
         try {
