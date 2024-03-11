@@ -36,7 +36,7 @@ interfaceStruct: 'interface' ident {PtGen.pt(10);} '{' (varfunc)* '}' {PtGen.pt(
 classStruct:     (('abstract' 'class' ident {PtGen.pt(11);})
                  | 'class' ident {PtGen.pt(12);})
                  '{' (varfunc)* '}' {PtGen.pt(14);} ;
-enumStruct:      'enumeration' ident {PtGen.pt(13);} '{' (ident)* '}' {PtGen.pt(14);} ;
+enumStruct:      'enumeration' ident {PtGen.pt(13);} '{' (ident {PtGen.pt(15);} )* '}' {PtGen.pt(14);} ;
 alignStruct:     'align' '{' (ident)* '}' ;
 
 varfunc: visibility ident {PtGen.pt(24);} ( function )? (':' ident {PtGen.pt(23);})? {PtGen.pt(30);};

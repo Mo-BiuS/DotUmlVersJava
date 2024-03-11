@@ -63,6 +63,10 @@ public class PtGen {
             case 14:
                 classWrite = null;
                 break;
+            //====[enum var]====
+            case 15:
+                ClassWriter.writeAtLastVar(ident);
+                break;
             //====[variable/function]====
             case 20:
                 varFuncVisibility = "private";
