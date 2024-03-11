@@ -45,6 +45,7 @@ class ClassWriter{
     public static void initInterface(String ident) {
         last = ident;
         ClassContainer cw = new ClassContainer();
+        cw.isInterface = true;
         cw.header = "interface "+ident;
         fileToWrite.put(ident, cw);
     }

@@ -1,0 +1,100 @@
+ClassDiagram [frame=true framecolor=steelblue label="DiagrammeBMO"] {
+ 	
+  class Parieur {
+   private idParieur : int
+   private surnom:String
+   private mdp:String
+   private adresseMail:String
+   private solde:int
+    
+   public placerParis(idParis:int, montant:int)
+  }
+  
+  class Bookmaker {
+   private idBookmaker:int
+   private mdp:String
+   private adresseMail:String
+    
+   public creerParis(paris:InterfaceParis)
+   public creerMatch(match:InterfaceMatch)
+   public creerEquipe(equipe:Equipe)
+    
+   public detruitParis(idParis:int)
+   public detruitMatch(idMatch:int)
+   public detruitEquipe(idEquipe:int)
+   
+   public resoudreMatch(idMatch:int)
+  }
+  
+  interface InterfaceMatch{
+   protected idMatch:int
+   protected nomMatch:String
+   protected description:String
+   protected typeSport:TypeSport
+   protected listePoint:ListInteger
+    
+   public resoudreMatch()
+  }
+  
+  class Equipe {
+   private idEquipe:int
+   private nomEquipe:String
+   private typeSport:TypeSport
+  }
+  
+  class MatchFoot{
+  }
+  class MatchBasket{
+  }
+  class MatchTenis{
+  }
+  class CourseCheval{
+  }
+
+  interface InterfaceParis {
+   protected idParis:int
+   protected cote:float
+   public resoudreParis():void
+  }
+  
+  enumeration TypeSport {
+    Foot
+    Basket
+    Tenis
+    CourseCheval
+  }
+
+ class ParisSimple {
+  private equipeId:int
+  private equipeIdVainqueur:int
+ }
+  
+  class ParisScoreExact {
+    private scoreList:ListInteger
+    private scoreListVainqueur:ListInteger
+  }
+  
+  class ParisOrdreExact {
+    private equipeIdList:ArrayListInteger
+    private equipeIdListVainqueur:ArrayListInteger
+  }
+  
+  class ParisPlace{
+    private montant:int
+    public resoudreGains()
+  }
+
+  ParisSimple -g-> InterfaceParis;
+  ParisScoreExact -g-> InterfaceParis;
+  ParisOrdreExact -g-> InterfaceParis;
+
+  Parieur "*" -- "*" InterfaceParis with ParisPlace;
+  InterfaceParis "*" -- "1" InterfaceMatch;
+  Equipe "*" --x  InterfaceMatch;
+  
+  MatchFoot -g-> InterfaceMatch ;
+  MatchBasket -g-> InterfaceMatch ;
+  MatchTenis -g-> InterfaceMatch ;
+  CourseCheval -g-> InterfaceMatch ;
+  
+}

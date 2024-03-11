@@ -40,7 +40,7 @@ enumStruct:      'enumeration' ident {PtGen.pt(13);} '{' (ident {PtGen.pt(15);} 
 alignStruct:     'align' '{' (ident)* '}' ;
 
 varfunc: visibility ident {PtGen.pt(24);} ( function )? (':' ident {PtGen.pt(23);})? {PtGen.pt(30);};
-function: '(' ( ident {PtGen.pt(25);}':' ident {PtGen.pt(26);} (',' ident{PtGen.pt(25);} ':' ident {PtGen.pt(27);})* )? ')';
+function: '('{PtGen.pt(28);} ( ident {PtGen.pt(25);}':' ident {PtGen.pt(26);} (',' ident{PtGen.pt(25);} ':' ident {PtGen.pt(27);})* )? ')';
 
 visibility: ('private' {PtGen.pt(20);} | 'public' {PtGen.pt(21);} | 'protected' {PtGen.pt(22);}) ;
 

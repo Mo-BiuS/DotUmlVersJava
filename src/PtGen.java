@@ -3,6 +3,10 @@ import java.util.Locale;
 import static java.lang.Math.max;
 
 public class PtGen {
+    /*
+        author : Thomas MESSMER
+     */
+
     private static final int
             PRIVATE=1, PUBLIC=2, PROTECTED=3,
             ASSOCIATION=0, IMPLEMENT=1,EXTENDS=2,COMPOSITION=3,AGREGATION=4;
@@ -16,6 +20,7 @@ public class PtGen {
     public static String varFuncVisibility;
     public static String funcArgs;
     public static String funcArgName;
+    public static boolean flagIsFunction;
 
     public static int associationType;
     public static String ass1, ass2, associationClass;
@@ -35,6 +40,7 @@ public class PtGen {
                 assArrayValue2 = -1;
                 ignore1 = false;
                 ignore2 = false;
+                flagIsFunction = false;
                 break;
             //====[NOM]====
             case 1:
@@ -92,18 +98,24 @@ public class PtGen {
             case 27:
                 funcArgs+=","+ident+" "+funcArgName;
                 break;
+            case 28:
+                flagIsFunction = true;
+                break;
             case 30:
                 String rep = "";
                 if(!(funcArgs == null) && !funcArgs.isEmpty())funcArgs+=")";
 
                 rep += varFuncVisibility + " " + varFuncType + " " + varFuncName + funcArgs;
 
-                if(!(funcArgs == null) && !funcArgs.isEmpty())
-                    ClassWriter.writeAtLastFunc(rep);
-                else ClassWriter.writeAtLastVar(rep);
+                if(flagIsFunction){
+                    if(!(funcArgs == null) && !funcArgs.isEmpty())
+                        ClassWriter.writeAtLastFunc(rep);
+                    else ClassWriter.writeAtLastFunc(rep+"()");
+                }else ClassWriter.writeAtLastVar(rep);
 
                 varFuncType = "void";
                 varFuncVisibility = "public";
+                flagIsFunction = false;
                 funcArgs = "";
             //====[Associations]====
             case 40:

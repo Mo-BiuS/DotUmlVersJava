@@ -8,6 +8,7 @@ public class ClassContainer {
     public List<String> variables = new ArrayList<>();
     public List<ClassContainer> compositions = new ArrayList<>();
     public List<String> functions = new ArrayList<>();;
+    public boolean isInterface = false;
 
     @Override
     public String toString() {
@@ -25,7 +26,9 @@ public class ClassContainer {
         if(!functions.isEmpty())rep+="\n";
 
         for (String func : functions)
-            rep+="\t"+func+"{\n\t\t//TODO\n\t}\n";
+            rep+="\t"+func;
+            if(!isInterface)rep+="{\n\t\t//TODO\n\t}\n";
+            else rep+=";\n";
         rep+="}";
 
         return rep;
